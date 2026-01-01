@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSC Solo Leveling System</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>SSC Solo Leveling System</h1>
+      <p class="subtitle">Discipline Over Motivation</p>
+    </header>
+
+    <main id="view">
+      <!-- Dynamic -->
+    </main>
+
+    <nav>
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="study">Study</button>
+      <button data-view="mock">Mock</button>
+      <button data-view="report">Report</button>
+      <button data-view="awakening">Awakening</button>
+    </nav>
+  </div>
+
+  <script src="./storage.js"></script>
+  <script src="./core.js"></script>
+  <script src="./app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js");
+    }
+  </script>
+</body>
+</html>
