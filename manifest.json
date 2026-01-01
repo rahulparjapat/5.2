@@ -1,20 +1,26 @@
 {
-  "name": "SSC Solo Leveling System",
+  "name": "SSC Solo Leveling – Crack SSC Like a Hunter",
   "short_name": "SSC Solo",
+  "description": "Offline-first professional SSC preparation system with verified study, XP discipline, and audit-grade reporting.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#0d0d14",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "scope": "./",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["education", "productivity"]
 }
