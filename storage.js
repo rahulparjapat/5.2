@@ -1,14 +1,16 @@
-const DB_NAME = "ssc_solo_db";
-const DB_VERSION = 1;
+/* IndexedDB for evidence | LocalStorage for metadata */
+
+const DB_NAME = "ssc_solo_images";
+const DB_VER = 1;
 let db;
 
 function openDB() {
   return new Promise((resolve) => {
-    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    const req = indexedDB.open(DB_NAME, DB_VER);
     req.onupgradeneeded = e => {
-      db = e.target.result;
-      if (!db.objectStoreNames.contains("images")) {
-        db.createObjectStore("images", { keyPath: "id", autoIncrement: true });
+      const d = e.target.result;
+      if (!d.objectStoreNames.contains("images")) {
+        d.createObjectStore("images", { keyPath: "id", autoIncrement: true });
       }
     };
     req.onsuccess = e => {
@@ -18,12 +20,9 @@ function openDB() {
   });
 }
 
-async function saveImage(blob) {
+function saveImage(blob) {
   const tx = db.transaction("images", "readwrite");
-  tx.objectStore("images").add({
-    blob,
-    ts: Date.now()
-  });
+  tx.objectStore("images").add({ blob, ts: Date.now() });
 }
 
 function compressImage(file) {
@@ -46,11 +45,7 @@ function compressImage(file) {
         canvas.width = width;
         canvas.height = height;
         canvas.getContext("2d").drawImage(img, 0, 0, width, height);
-        canvas.toBlob(
-          blob => resolve(blob),
-          "image/webp",
-          0.65
-        );
+        canvas.toBlob(b => resolve(b), "image/webp", 0.65);
       };
       img.src = e.target.result;
     };
