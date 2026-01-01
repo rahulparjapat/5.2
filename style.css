@@ -1,15 +1,16 @@
 :root {
-  --bg: #0f172a;
-  --panel: #111827;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --accent: #38bdf8;
+  --bg: #0d0d14;
+  --panel: #16162a;
+  --border: #2a2a45;
+  --text: #e8e8f0;
+  --muted: #9aa0b8;
+  --accent: #4a9eff;
   --danger: #ef4444;
 }
 
 * {
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
 }
 
 body {
@@ -18,62 +19,29 @@ body {
   color: var(--text);
 }
 
-#app {
-  max-width: 900px;
-  margin: auto;
-  padding: 16px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  background: var(--panel);
-  padding: 8px;
-  position: sticky;
-  bottom: 0;
-}
-
-nav button {
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 0.9rem;
-}
-
 .card {
   background: var(--panel);
-  padding: 14px;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
-.stat {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-button.primary {
+button {
   background: var(--accent);
-  color: #000;
+  color: #fff;
   border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   font-weight: 600;
 }
 
-.warning {
-  color: var(--danger);
-  font-size: 0.85rem;
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.hidden {
+  display: none;
 }
